@@ -30,6 +30,13 @@ public class UserDaoImpl extends  BaseDaoImpl<User,Serializable>  implements IUs
         StringBuffer sql = new StringBuffer();
         sql.append(" select * from user ");
 
+
+        StringBuffer sql2 = new StringBuffer();
+        sql2.append(" select name from user ");
+        List<String> list = this.queryColumnForList(sql2.toString(),String.class);
+        for(String s:list){
+            System.out.println(s);
+        }
         return this.queryForList(sql.toString());
     }
 

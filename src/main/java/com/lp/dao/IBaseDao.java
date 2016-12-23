@@ -16,4 +16,8 @@ public interface IBaseDao<T,ID extends Serializable>  {
     void test(T t);
 
     List<Map<String, Object>> queryForList(String sql);
+
+    List<T> queryBeanForList(String sql);
+
+    List queryColumnForList(String sql,Class clz);
 }
