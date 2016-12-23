@@ -3,6 +3,8 @@ package com.lp.controller;
 import com.lp.bean.TmUser;
 import com.lp.bean.User;
 import com.lp.service.IUserService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by CPR161 on 2016-12-16.
@@ -21,6 +24,8 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    Logger logger = LogManager.getLogger(UserController.class.getName());
 
     @Autowired
     private IUserService userService;
@@ -51,5 +56,13 @@ public class UserController {
             return "The user id is: " + userId;
         }
         return "user " + email + " is not exist.";
+    }
+
+    @RequestMapping("/getUser")
+    @ResponseBody
+    public Object getUser() {
+        logger.info(" info 日志输出");
+        Map<String,Object> cond = new HashMap<String,Object>();
+        return userService.queryUser(cond);
     }
 }

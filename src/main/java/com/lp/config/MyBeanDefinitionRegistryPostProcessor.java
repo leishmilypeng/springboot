@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by CPR161 on 2016-12-20.
+ * 采用自动注解扫描不用注册显示注册bean
  */
 @Configuration
 public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegistryPostProcessor {
@@ -28,7 +29,7 @@ public class MyBeanDefinitionRegistryPostProcessor implements BeanDefinitionRegi
         /*
         * 在这里可以注入bean.
         */
-        registerBean(beanDefinitionRegistry, "userService", UserServiceImpl.class);
+       // registerBean(beanDefinitionRegistry, "userService", UserServiceImpl.class);
     }
 
     @Override

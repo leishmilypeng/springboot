@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+    <appenders>
+        <!--采用Console输出-->
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--控制行格式化输出-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!--文件输出-->
+        <RollingFile name="ROLLING" fileName="/opt/log/springboot.log"  filePattern="/opt/log/springboot.%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="%-d{yyyy-MM-dd HH:mm:ss} [%l]  %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy modulate="true" interval="1"/>
+                <SizeBasedTriggeringPolicy size="512 MB"/>
+            </Policies>
+            <!-- 最大保留压缩日志文件个数 -->
+            <DefaultRolloverStrategy max="200"/>
+
+        </RollingFile>
+
+    </appenders>
+    <loggers>
+
+        <root level="info">
+            <!-- 控制日志输出到控制台 -->
+            <appender-ref ref="Console" />
+            <!-- 控制日志输出到文件-->
+            <appender-ref ref="ROLLING"/>
+
+        </root>
+    </loggers>
+</configuration>
