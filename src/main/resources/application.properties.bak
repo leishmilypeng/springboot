@@ -1,0 +1,16 @@
+spring.datasource.url = jdbc:mysql://localhost:3306/maven_pro
+spring.datasource.username = root
+spring.datasource.password = 123456
+spring.datasource.driverClassName = com.mysql.jdbc.Driver
+
+logging.config=classpath:log4j2.xml
+
+# 页面默认前缀目录
+spring.mvc.view.prefix=/WEB-INF/view/
+
+# 响应页面默认后缀
+spring.mvc.view.suffix=.jsp
+
+#  1.x  server.context-path=/demo
+#  2.x  server.servlet.context-path=/demo
+server.context-path=/demo
