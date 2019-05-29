@@ -65,4 +65,10 @@ public class UserController {
         Map<String,Object> cond = new HashMap<String,Object>();
         return userService.queryUser(cond);
     }
+
+
+    @RequestMapping("/test")
+    public String test(){
+        return "test";
+    }
 }
