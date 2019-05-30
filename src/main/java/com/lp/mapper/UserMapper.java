@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
  * Created by CPR161 on 2019-05-30.
  */
 @Mapper
-public interface UserMapper {
-    User get(int id);
+public interface UserMapper extends MyMapper<User> {
+    //User get(int id);
 }

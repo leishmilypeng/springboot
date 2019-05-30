@@ -16,4 +16,6 @@ public interface IUserService extends IBaseService{
 
     public User get(int id);
 
+    public  void doTest();
+
 }

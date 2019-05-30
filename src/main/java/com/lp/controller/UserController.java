@@ -40,6 +40,8 @@ public class UserController {
         TmUser user  = new TmUser();
         user.setId("111111");
         user.setUsername("id==="+Math.random());
+
+        userService.doTest();
         return user;
     }
 
@@ -56,16 +58,15 @@ public class UserController {
     //使用ModelAndView  返回页面
     @RequestMapping("/firstPage")
     public ModelAndView firstPage() {
-
         ModelAndView modelAndView = new ModelAndView("first");
         modelAndView.addObject("content", "way of first");
         return modelAndView;
 
     }
 
+    //通过application.yml里面的配置  返回页面
     @RequestMapping("/secondPage")
     public String waySecond(Map<String,Object> model) {
-
         model.put("content", "way of second");
         return "second";
 
@@ -75,4 +76,7 @@ public class UserController {
     public String test(){
         return "test";
     }
+
+
+
 }

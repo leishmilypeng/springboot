@@ -8,13 +8,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * Created by CPR161 on 2016-12-16.
  */
 @Service
+//@Transactional
 public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
     @Resource
@@ -25,6 +28,19 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
 
     public User get(int id){
         return userMapper.get(id);
+    }
+
+    @Override
+    public void doTest() {
+        for(int i=0;i<10;i++) {
+            User user = new User();
+            Random ran = new Random();
+            user.setUserName("leipeng"+ran.toString());
+            user.setPassWord("123"+ran.toString());
+            user.setRealName("雷鹏"+ran.toString());
+            user.setCreateDate(new Date());
+            userMapper.insert(user);
+        }
     }
 
     @Override
