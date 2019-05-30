@@ -21,5 +21,19 @@ springboot启动变更
 
 
 
+springboot不赞同使用jsp，访问jsp页面会提示如下信息
 
+![1559202527547](C:\Users\cpr161\AppData\Roaming\Typora\typora-user-images\1559202527547.png)
 
+```xml
+<dependency>
+  <groupId>org.apache.tomcat.embed</groupId>
+  <artifactId>tomcat-embed-jasper</artifactId>
+</dependency>
+<dependency>
+  <groupId>javax.servlet</groupId>
+  <artifactId>jstl</artifactId>
+</dependency>
+```
+
+可以在pom中通过增加上述依赖来支持jsp的解析
