@@ -19,8 +19,8 @@ public class UserDaoImpl extends  BaseDaoImpl<User,Serializable>  implements IUs
     public User findByEmail(String email) {
         User user = new User();
         user.setId(1);
-        user.setEmail("891880796@qq.com");
-        user.setName("leipeng");
+        //user.setEmail("891880796@qq.com");
+        //user.setName("leipeng");
         return user;
     }
 

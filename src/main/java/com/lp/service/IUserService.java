@@ -14,4 +14,6 @@ public interface IUserService extends IBaseService{
 
     List<Map<String,Object>> queryUser(Map<String,Object> cond);
 
+    public User get(int id);
+
 }
