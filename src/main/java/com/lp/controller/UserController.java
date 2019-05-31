@@ -1,7 +1,10 @@
 package com.lp.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lp.bean.TmUser;
 import com.lp.service.IUserService;
+import com.lp.vo.UserVo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -76,6 +80,21 @@ public class UserController {
     public String test(){
         return "test";
     }
+
+
+    @RequestMapping("/queryList/{pageNum}")
+    @ResponseBody
+    public PageInfo getPageInfo(@PathVariable Integer pageNum){
+        if(pageNum==null)
+            pageNum = 1;
+        // 设置分页参数
+        // 第一个参数是第几页；第二个参数是每页显示条数。PageHelper实现分页的原理见项目内文档problem_remark.md
+        PageHelper.startPage(pageNum,10);
+        List<UserVo> list=userService.getAll();
+        PageInfo<UserVo> pageInfo=new PageInfo<UserVo>(list);
+        return pageInfo;
+    }
+
 
 
 

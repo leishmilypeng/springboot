@@ -39,8 +39,12 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
             user.setPassWord("123"+ran.toString());
             user.setRealName("雷鹏"+ran.toString());
             user.setCreateDate(new Date());
-            userMapper.insert(user);
+            //userMapper.insert(user);
         }
+
+        List list = userMapper.getMapList(0);
+        Integer count = userMapper.getCountByKey("雷鹏1");
+        System.out.println();
     }
 
     @Override
@@ -54,5 +58,10 @@ public class UserServiceImpl extends BaseServiceImpl implements IUserService{
     @Override
     public List<Map<String, Object>> queryUser(Map<String, Object> cond) {
         return userDao.queryUserBySql(cond);
+    }
+
+    @Override
+    public List getAll() {
+        return userMapper.getMapList(0);
     }
 }

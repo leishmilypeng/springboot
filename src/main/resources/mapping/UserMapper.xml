@@ -2,15 +2,28 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lp.mapper.UserMapper">
 
-    <resultMap id="BaseResultMap" type="com.lp.bean.User">
+    <resultMap id="BaseResultMap" type="com.lp.vo.UserVo">
         <result column="id" jdbcType="INTEGER" property="id" />
         <result column="userName" jdbcType="VARCHAR" property="userName" />
         <result column="passWord" jdbcType="VARCHAR" property="passWord" />
         <result column="realName" jdbcType="VARCHAR" property="realName" />
     </resultMap>
 
+    <!--resultMap是有用户自定义的类型，属于vo，列与属性的映射见上面-->
+    <select id="getMapList" resultMap="BaseResultMap" >
+        select * from  user
+        <if test="id!=0">
+         where id = #{id}
+        </if>
+    </select>
+
+    <!--resultType为项目里面的实体bean类型，实体直接与数据列对应  -->
     <select id="get" resultType="com.lp.bean.User">
         select * from user where id = #{id}
+    </select>
+
+    <select id="getCountByKey" resultType="Integer">
+        select count(1) from user where realName like concat('%',#{key},'%')
     </select>
 
 </mapper>
