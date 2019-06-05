@@ -22,10 +22,16 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="mybatisGen" />
+      </profile>
+      <profile default="false" name="Annotation profile for generator" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="generator" target="1.8" />
       <module name="mybatisGen" target="1.8" />
       <module name="springboot" target="1.8" />
     </bytecodeTargetLevel>

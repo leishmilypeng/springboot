@@ -17,7 +17,7 @@ http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
 springboot启动变更
 
-![1559187329903](C:\Users\cpr161\AppData\Roaming\Typora\typora-user-images\1559187329903.png)
+![1559187329903](picture\1559187329903.png)
 
 
 
@@ -132,6 +132,12 @@ com.github.pagehelper.SqlUtil 中定义
 ```java
 private static final ThreadLocal<Page> LOCAL_PAGE = new ThreadLocal();
 ```
+
+
+
+一个项目中如果包含有子模块，父级中的pom.xml文件进行mvn编译打包，会直接对子模块的pom.xml进行执行，所以父级中不应该有代码，只应该包括一些配置文件
+
+
 
 
 
