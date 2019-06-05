@@ -3,6 +3,7 @@ package com.lp.controller;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lp.bean.TmUser;
+import com.lp.bean.User;
 import com.lp.service.IUserService;
 import com.lp.vo.UserVo;
 import org.apache.logging.log4j.LogManager;
@@ -40,10 +41,10 @@ public class UserController {
 
     @RequestMapping("set/{id}")
     @ResponseBody
-    public TmUser getUser(@PathVariable String id){
-        TmUser user  = new TmUser();
-        user.setId("111111");
-        user.setUsername("id==="+Math.random());
+    public User getUser(@PathVariable String id){
+        User user  = new User();
+        user.setRealName("111111");
+        user.setUserName("id==="+Math.random());
 
         userService.doTest();
         return user;
