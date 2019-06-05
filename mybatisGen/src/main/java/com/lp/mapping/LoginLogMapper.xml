@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lp.dao.LoginLogMapper">
+  <resultMap id="BaseResultMap" type="com.lp.model.LoginLog">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="logname" jdbcType="VARCHAR" property="logname" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="succeed" jdbcType="VARCHAR" property="succeed" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lp.model.LoginLog">
+    <result column="message" jdbcType="LONGVARCHAR" property="message" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    message
+  </sql>
+  <insert id="insert" parameterType="com.lp.model.LoginLog">
+    insert into login_log (id, logname, userid, 
+      createtime, succeed, ip, 
+      message)
+    values (#{id,jdbcType=INTEGER}, #{logname,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{succeed,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{message,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lp.model.LoginLog">
+    insert into login_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="logname != null">
+        logname,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="succeed != null">
+        succeed,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="logname != null">
+        #{logname,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="succeed != null">
+        #{succeed,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lp.model.LoginLog">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="logname" jdbcType="VARCHAR" property="logname" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="succeed" jdbcType="VARCHAR" property="succeed" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lp.model.LoginLog">
+    <result column="message" jdbcType="LONGVARCHAR" property="message" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    message
+  </sql>
+  <insert id="insert" parameterType="com.lp.model.LoginLog">
+    insert into login_log (id, logname, userid, 
+      createtime, succeed, ip, 
+      message)
+    values (#{id,jdbcType=INTEGER}, #{logname,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{succeed,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{message,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lp.model.LoginLog">
+    insert into login_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="logname != null">
+        logname,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="succeed != null">
+        succeed,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="logname != null">
+        #{logname,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="succeed != null">
+        #{succeed,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lp.model.LoginLog">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="logname" jdbcType="VARCHAR" property="logname" />
+    <result column="userid" jdbcType="INTEGER" property="userid" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="succeed" jdbcType="VARCHAR" property="succeed" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.lp.model.LoginLog">
+    <result column="message" jdbcType="LONGVARCHAR" property="message" />
+  </resultMap>
+  <sql id="Blob_Column_List">
+    message
+  </sql>
+  <insert id="insert" parameterType="com.lp.model.LoginLog">
+    insert into login_log (id, logname, userid, 
+      createtime, succeed, ip, 
+      message)
+    values (#{id,jdbcType=INTEGER}, #{logname,jdbcType=VARCHAR}, #{userid,jdbcType=INTEGER}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{succeed,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{message,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lp.model.LoginLog">
+    insert into login_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="logname != null">
+        logname,
+      </if>
+      <if test="userid != null">
+        userid,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="succeed != null">
+        succeed,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="message != null">
+        message,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="logname != null">
+        #{logname,jdbcType=VARCHAR},
+      </if>
+      <if test="userid != null">
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="succeed != null">
+        #{succeed,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="message != null">
+        #{message,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
