@@ -23,7 +23,7 @@ springboot启动变更
 
 springboot不赞同使用jsp，访问jsp页面会提示如下信息
 
-![1559202527547](C:\Users\cpr161\AppData\Roaming\Typora\typora-user-images\1559202527547.png)
+![1559202527547](picture/1559202527547.png)
 
 ```xml
 <dependency>
