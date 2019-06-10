@@ -139,6 +139,24 @@ private static final ThreadLocal<Page> LOCAL_PAGE = new ThreadLocal();
 
 
 
+**技巧**IDEA增加mybatis插件
+
+https://mp.weixin.qq.com/s/Y8KqbM9YIWWgrwjUnKfV2Q
+
+**Free Mybatis plugin**,可以很方便的在java文件和对应的xml映射文件之间切换
+
+![1559813013043](picture/1559813013043.png)
+
+![1559813079389](picture/1559813079389.png)
+
+
+
+**MyBatis Log Plugin**会把Mybatis的脚本直接输出在console中，默认情况下，输出的脚本不是一个可以直接执行的，增加该插件后可以直接执行
+
+![1559814151791](picture/1559814151791.png)
+
+![1559814167939](picture/1559814167939.png)
+
 
 
 

@@ -156,15 +156,12 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <mainClass>com.lp.DemoApplication</mainClass>
+       <!--   <mainClass>com.lp.DemoApplication</mainClass>-->
           <fork>true</fork>
         </configuration>
       </plugin>
     </plugins>
   </build>
 
-  <distributionManagement>
-
-  </distributionManagement>
 
 </project>
